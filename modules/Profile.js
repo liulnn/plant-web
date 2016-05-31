@@ -18,7 +18,7 @@ export default React.createClass({
             <div>
                 <AppBar
                     title="Plant"
-                    iconElementLeft={<IconButton><ActionHome /></IconButton>}
+                    iconElementLeft={<IconButton linkButton={true} href="#/home"><ActionHome /></IconButton>}
                     iconElementRight={<IconButton linkButton={true} href="#/settings"><ActionSettings /></IconButton>}
                 />
                 <Card>

@@ -24,7 +24,7 @@ export default React.createClass({
         return (
             <div>
                 <AppBar
-                    title="Family"
+                    title="Plant"
                 />
                 <AutoComplete
                     hintText="Type Username"
