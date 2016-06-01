@@ -7,7 +7,7 @@ import Home from './modules/Home'
 import About from './modules/About'
 import Login from './modules/Login'
 import Profile from './modules/Profile'
-import PlantList from './modules/PlantList'
+import Gallery from './modules/Gallery'
 import Settings from './modules/Settings'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -24,7 +24,7 @@ render((
             <Route path="/home" component={Home}/>
             <Route path="/login" component={Login}/>
             <Route path="/profile" component={Profile}/>
-            <Route path="/plants" component={PlantList}/>
+            <Route path="/gallery" component={Gallery}/>
             <Route path="/settings" component={Settings}/>
         </Route>
     </Router>

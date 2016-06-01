@@ -2,9 +2,9 @@ import React from 'react'
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
-import ActionSettings from 'material-ui/svg-icons/action/settings';
+import ActionSearch from 'material-ui/svg-icons/action/search';
 import Tabs from './Tabs';
-import UserInfo from './UserInfo';
+import PlantList from './PlantList';
 
 export default React.createClass({
     render() {
@@ -13,11 +13,13 @@ export default React.createClass({
                 <AppBar
                     title="Plant"
                     iconElementLeft={<IconButton linkButton={true} href="#/home"><ActionHome /></IconButton>}
-                    iconElementRight={<IconButton linkButton={true} href="#/settings"><ActionSettings /></IconButton>}
+                    iconElementRight={<IconButton><ActionSearch /></IconButton>}
                 />
-                <UserInfo />
-                <Tabs index={2}/>
+                <PlantList />
+                <Tabs index={0}/>
             </div>
         )
     }
 })
+
+

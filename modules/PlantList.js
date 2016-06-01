@@ -64,31 +64,23 @@ const tilesData = [
 export default React.createClass({
     render() {
         return (
-            <div>
-                <AppBar
-                    title="Plant"
-                    iconElementLeft={<IconButton linkButton={true} href="#/home"><ActionHome /></IconButton>}
-                    iconElementRight={<IconButton><ActionSearch /></IconButton>}
-                />
-                <div style={styles.root}>
-                    <GridList
-                        cols={2}
-                        cellHeight={200}
-                        style={styles.gridList}
-                    >
-                        {tilesData.map((tile) => (
-                            <GridTile
-                                key={tile.img}
-                                title={tile.title}
-                                subtitle={<span>by <b>{tile.author}</b></span>}
-                                actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-                            >
-                                <img src={tile.img}/>
-                            </GridTile>
-                        ))}
-                    </GridList>
-                </div>
-                <Tabs index={0}/>
+            <div style={styles.root}>
+                <GridList
+                    cols={2}
+                    cellHeight={200}
+                    style={styles.gridList}
+                >
+                    {tilesData.map((tile) => (
+                        <GridTile
+                            key={tile.img}
+                            title={tile.title}
+                            subtitle={<span>by <b>{tile.author}</b></span>}
+                            actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+                        >
+                            <img src={tile.img}/>
+                        </GridTile>
+                    ))}
+                </GridList>
             </div>
         )
     }
