@@ -3,12 +3,12 @@ import {render} from 'react-dom'
 import {Router, Route, hashHistory, IndexRoute} from 'react-router'
 
 import App from './modules/App'
-import Home from './modules/Home'
-import About from './modules/About'
-import Login from './modules/Login'
-import Profile from './modules/Profile'
-import Gallery from './modules/Gallery'
-import Settings from './modules/Settings'
+import Home from './modules/components/Home'
+import About from './modules/components/About'
+import Login from './modules/components/Login'
+import Profile from './modules/components/Profile'
+import Gallery from './modules/components/Gallery'
+import Settings from './modules/components/Settings'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 

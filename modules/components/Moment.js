@@ -17,7 +17,7 @@ export default React.createClass({
                     <GridList cellHeight={50}>
                         {this.props.images.map((image) => (
                             <GridTile>
-                                <img src={image.source} />
+                                <img src={image.source}/>
                             </GridTile>
                         ))}
                     </GridList>

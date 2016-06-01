@@ -6,42 +6,46 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import MapsPlace from 'material-ui/svg-icons/maps/place';
 import {Card, CardMedia} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
+import UserInfoStore from '../stores/UserInfoStore';
 
 export default React.createClass({
+    getInitialState: function () {
+        return {userInfo: UserInfoStore.getUserById(1)};
+    },
     render() {
         return (
             <div>
                 <Card>
                     <CardMedia>
-                        <img src="http://lorempixel.com/600/337/nature/"/>
+                        <img src={this.state.userInfo.avatar} />
                     </CardMedia>
                 </Card>
                 <div>
                     <SocialPerson />
                     <TextField
                         id="text-field-default"
-                        defaultValue="Jack"
+                        defaultValue={this.state.userInfo.username}
                     />
                 </div>
                 <div>
                     <CommunicationPhone />
                     <TextField
                         id="text-field-default"
-                        defaultValue="239**4827"
+                        defaultValue={this.state.userInfo.phone}
                     />
                 </div>
                 <div>
                     <CommunicationEmail />
                     <TextField
                         id="text-field-default"
-                        defaultValue="email@126.com"
+                        defaultValue={this.state.userInfo.email}
                     />
                 </div>
                 <div>
                     <MapsPlace />
                     <TextField
                         id="text-field-default"
-                        defaultValue="Beijing"
+                        defaultValue={this.state.userInfo.place}
                     />
                 </div>
                 <div>
