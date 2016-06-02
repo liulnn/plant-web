@@ -1,7 +1,9 @@
 import React from 'react'
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import IconButton from 'material-ui/IconButton';
 import {GridList, GridTile} from 'material-ui/GridList';
+import ActionThumbUp from 'material-ui/svg-icons/action/thumb-up';
+import ActionThumbDown from 'material-ui/svg-icons/action/thumb-down';
 
 
 export default React.createClass({
@@ -24,8 +26,8 @@ export default React.createClass({
                 </div>
                 <CardText>{this.props.address}</CardText>
                 <CardActions>
-                    <FlatButton label="Up"/>
-                    <FlatButton label="Down"/>
+                    <IconButton><ActionThumbUp /></IconButton>
+                    <IconButton><ActionThumbDown /></IconButton>
                 </CardActions>
             </Card>
         )

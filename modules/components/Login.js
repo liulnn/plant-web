@@ -2,6 +2,9 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import AutoComplete from 'material-ui/AutoComplete';
 import FlatButton from 'material-ui/FlatButton';
+import IconButton from 'material-ui/IconButton'
+import ImageNature from 'material-ui/svg-icons/image/nature';
+
 
 export default React.createClass({
     getInitialState: function () {
@@ -25,6 +28,7 @@ export default React.createClass({
             <div>
                 <AppBar
                     title="Plant"
+                    iconElementLeft={<IconButton><ImageNature /></IconButton>}
                 />
                 <AutoComplete
                     hintText="Type Username"
@@ -44,7 +48,7 @@ export default React.createClass({
                     label="Login"
                     primary={true}
                     linkButton={true}
-                    href="#/profile"
+                    href="#/"
                     onMouseDown={this.onMouseDown}
                 />
             </div>
