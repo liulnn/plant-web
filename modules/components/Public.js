@@ -13,8 +13,8 @@ export default React.createClass({
             <div>
                 <AppBar
                     title="Plant"
-                    iconElementLeft={<IconButton linkButton={true} href="#/home"><ActionHome /></IconButton>}
-                    iconElementRight={<IconButton linkButton={true} href="#/moments/add"><ContentAdd /></IconButton>}
+                    iconElementLeft={<IconButton linkButton={true} href="#/"><ActionHome /></IconButton>}
+                    iconElementRight={<IconButton linkButton={true} href="#/share"><ContentAdd /></IconButton>}
                 />
                 <MomentList />
                 <Tabs index={1}/>

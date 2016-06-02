@@ -12,7 +12,7 @@ export default React.createClass({
             <div>
                 <AppBar
                     title="Plant"
-                    iconElementLeft={<IconButton linkButton={true} href="#/home"><ActionHome /></IconButton>}
+                    iconElementLeft={<IconButton linkButton={true} href="#/"><ActionHome /></IconButton>}
                     iconElementRight={<IconButton linkButton={true} href="#/settings"><ActionSettings /></IconButton>}
                 />
                 <UserInfo />

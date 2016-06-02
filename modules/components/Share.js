@@ -20,7 +20,7 @@ export default React.createClass({
         return (
             <div>
                 <AppBar
-                    iconElementLeft={<IconButton linkButton={true} href="#/home"><NavigationArrowBack /></IconButton>}
+                    iconElementLeft={<IconButton linkButton={true} href="#/"><NavigationArrowBack /></IconButton>}
                     iconElementRight={<FlatButton label="Send" />}
                 />
                 <div>
