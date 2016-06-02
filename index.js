@@ -9,6 +9,7 @@ import Login from './modules/components/Login'
 import Profile from './modules/components/Profile'
 import Gallery from './modules/components/Gallery'
 import Settings from './modules/components/Settings'
+import AddMoment from './modules/components/AddMoment'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -26,6 +27,7 @@ render((
             <Route path="/profile" component={Profile}/>
             <Route path="/gallery" component={Gallery}/>
             <Route path="/settings" component={Settings}/>
+            <Route path="/moments/add" component={AddMoment}/>
         </Route>
     </Router>
 ), document.getElementById('app'));
