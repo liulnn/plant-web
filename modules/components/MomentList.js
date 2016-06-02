@@ -10,7 +10,7 @@ export default React.createClass({
         var momentNodes = this.state.moments.map(function (moment) {
             return (
                 <Moment
-                    moment_id={moment.id}
+                    key={moment.id}
                     author={moment.author}
                     avatar={moment.avatar}
                     content={moment.content}
