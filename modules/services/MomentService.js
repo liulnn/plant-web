@@ -45,8 +45,10 @@ var moments = [
     }
 ];
 
-export default {
-    getList(){
+var MomentService = {
+    getList: function () {
         MomentAction.getList(moments);
     }
 };
+
+module.exports = MomentService;
