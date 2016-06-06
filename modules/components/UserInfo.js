@@ -17,7 +17,7 @@ export default React.createClass({
             <div>
                 <Card>
                     <CardMedia>
-                        <img src={this.state.userInfo.avatar} />
+                        <img src={this.state.userInfo.avatar}/>
                     </CardMedia>
                 </Card>
                 <div>

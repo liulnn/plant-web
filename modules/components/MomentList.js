@@ -1,10 +1,22 @@
 import React from 'react'
 import Moment from './Moment';
 import MomentStore from '../stores/MomentStore';
+import MomentService from '../services/MomentService';
 
 export default React.createClass({
     getInitialState: function () {
-        return {moments: MomentStore.getAll()};
+        return {moments: []};
+    },
+    componentDidMount: function () {
+        MomentStore.addChangeListener(this.onChange);
+        MomentService.getList();
+    },
+    componentWillUnmount: function () {
+        MomentStore.removeChangeListener(this.onChange);
+    },
+
+    onChange: function () {
+        this.setState({moments: MomentStore.getList()});
     },
     render() {
         var momentNodes = this.state.moments.map(function (moment) {

@@ -1,55 +1,37 @@
+var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 
-var _moments = [
-    {
-        id: '1',
-        author: 'jack',
-        avatar: 'http://lorempixel.com/600/337/nature/',
-        content: 'Today is a nice day!',
-        images: [
-            {
-                'source': 'http://lorempixel.com/600/330/nature/'
-            }
-        ],
-        address: 'Beijing'
-    },
-    {
-        id: '2',
-        author: 'lucy',
-        avatar: 'http://lorempixel.com/600/338/nature/',
-        content: 'Today is a bad day!',
-        images: [
-            {
-                'source': 'http://lorempixel.com/600/331/nature/'
-            },
-            {
-                'source': 'http://lorempixel.com/600/332/nature/'
-            }
-        ],
-        address: 'shanghai'
-    },
-    {
-        id: '3',
-        author: 'lily',
-        avatar: 'http://lorempixel.com/600/339/nature/',
-        content: 'Today is a bad day!',
-        images: [
-            {
-                'source': 'http://lorempixel.com/600/333/nature/'
-            },
-            {
-                'source': 'http://lorempixel.com/600/334/nature/'
-            }
-        ],
-        address: 'zhengzhou'
-    }
-];
+import * as types from '../constants/ActionTypes'
+
+var moments = [];
+
+const CHANGE_EVENT = 'change';
 
 var MomentStore = assign({}, EventEmitter.prototype, {
-    getAll: function () {
-        return _moments;
+    getList: function () {
+        return moments;
     },
+    emitChange: function () {
+        this.emit(CHANGE_EVENT);
+    },
+    addChangeListener: function (callback) {
+        this.on(CHANGE_EVENT, callback);
+    },
+    removeChangeListener: function (callback) {
+        this.removeListener(CHANGE_EVENT, callback);
+    }
+});
+
+AppDispatcher.register(function (action) {
+    switch (action.actionType) {
+        case types.GET_LIST:
+            moments = action.moments;
+            MomentStore.emitChange();
+            break;
+        default:
+        // no op
+    }
 });
 
 module.exports = MomentStore;
