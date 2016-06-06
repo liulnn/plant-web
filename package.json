@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --port 9000 --content-base ."
+    "start": "webpack-dev-server --inline --host 0.0.0.0 --port 9000 --content-base ."
   },
   "author": "",
   "license": "ISC",
