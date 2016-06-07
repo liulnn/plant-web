@@ -6,6 +6,8 @@ import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton'
 import ImageNature from 'material-ui/svg-icons/image/nature';
 
+import AccountStore from '../stores/AccountStore'
+
 
 export default React.createClass({
     getInitialState: function () {
@@ -23,8 +25,21 @@ export default React.createClass({
             password: event.target.value
         });
     },
-    handleSubmit: function () {
-        console.log(this.state);
+    handleSubmit: function (e) {
+        e.preventDefault();
+        var username = this.state.username.trim();
+        var password = this.state.password.trim();
+        console.log(username, password);
+        if (!username || !password) {
+            return;
+        }
+        var success = AccountStore.login(username, password);
+        if(success){
+            console.log('login success');
+        }else{
+            console.log('login failed');
+        }
+        this.setState({username: '', names: [], password: ''});
     },
     render: function () {
         return (
@@ -33,7 +48,7 @@ export default React.createClass({
                     title="Plant"
                     iconElementLeft={<IconButton><ImageNature /></IconButton>}
                 />
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <AutoComplete
                         hintText="Type Username"
                         dataSource={this.state.names}
@@ -54,7 +69,7 @@ export default React.createClass({
                         primary={true}
                         // linkButton={true}
                         // href="#/"
-                        onTouchTap={this.handleSubmit}
+                        type="submit"
                     />
                 </form>
             </div>

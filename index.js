@@ -19,7 +19,7 @@ render((
     <Router history={hashHistory}>
         <Route path="/" component={App}>
             {/* add it here, as a child of `/` */}
-            <IndexRoute component={Public}/>
+            <IndexRoute component={Login}/>
 
             <Route path="/about" component={About}/>
             <Route path="/public" component={Public}/>
