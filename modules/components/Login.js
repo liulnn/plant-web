@@ -7,9 +7,9 @@ import IconButton from 'material-ui/IconButton'
 import ImageNature from 'material-ui/svg-icons/image/nature';
 
 import AccountStore from '../stores/AccountStore'
+import { withRouter } from 'react-router'
 
-
-export default React.createClass({
+const Login = React.createClass({
     getInitialState: function () {
         return {username: '', names: [], password: ''};
     },
@@ -36,6 +36,7 @@ export default React.createClass({
         var success = AccountStore.login(username, password);
         if(success){
             console.log('login success');
+            this.props.router.push('/public')
         }else{
             console.log('login failed');
         }
@@ -76,3 +77,4 @@ export default React.createClass({
         );
     },
 })
+export default withRouter(Login);
