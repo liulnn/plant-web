@@ -1,5 +1,8 @@
 import React from 'react';
 
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import ActionHome from 'material-ui/svg-icons/action/home';
 import {List, ListItem} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
@@ -16,6 +19,10 @@ const Settings = React.createClass({
     render: function () {
         return (
             <div>
+                <AppBar
+                    title="Plant"
+                    iconElementLeft={<IconButton linkButton={true} href="#/"><ActionHome /></IconButton>}
+                />
                 <List>
                     <Subheader>Priority Interruptions</Subheader>
                     <ListItem primaryText="Events and reminders" rightToggle={<Toggle />}/>
