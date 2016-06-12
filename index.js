@@ -3,6 +3,7 @@ import {render} from 'react-dom'
 import {Router, Route, hashHistory, IndexRoute} from 'react-router'
 
 import App from './modules/App'
+import MyComponent from './modules/MyComponent'
 import Share from './modules/components/Share'
 import Public from './modules/components/Public'
 import About from './modules/components/About'
@@ -19,7 +20,7 @@ render((
     <Router history={hashHistory}>
         <Route path="/" component={App}>
             {/* add it here, as a child of `/` */}
-            <IndexRoute component={Login}/>
+            <IndexRoute component={MyComponent}/>
 
             <Route path="/about" component={About}/>
             <Route path="/public" component={Public}/>
