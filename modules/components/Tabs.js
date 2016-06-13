@@ -9,9 +9,9 @@ export default React.createClass({
     render() {
         return (
             <Tabs initialSelectedIndex={this.props.index}>
-                <Tab linkButton containerElement={<Link to="/gallery" />} icon={<ImageCollections />}/>
-                <Tab linkButton containerElement={<Link to="/public" />} icon={<SocialPublic />}/>
-                <Tab linkButton containerElement={<Link to="/profile" />} icon={<SocialPerson />}/>
+                <Tab linkButton={true} containerElement={<Link to="/gallery" />} icon={<ImageCollections />}/>
+                <Tab linkButton={true} containerElement={<Link to="/public" />} icon={<SocialPublic />}/>
+                <Tab linkButton={true} containerElement={<Link to="/profile" />} icon={<SocialPerson />}/>
             </Tabs>
         )
     }

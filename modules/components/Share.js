@@ -4,8 +4,10 @@ import IconButton from 'material-ui/IconButton';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+import Divider from 'material-ui/Divider';
 import MapsPlace from 'material-ui/svg-icons/maps/place';
-import ContentAdd from 'material-ui/svg-icons/content/add';
+import FileFileUpload from 'material-ui/svg-icons/file/file-upload';
+import ContentCreate from 'material-ui/svg-icons/content/create';
 
 
 export default React.createClass({
@@ -13,7 +15,7 @@ export default React.createClass({
         return {
             content: '',
             images: [],
-            address: ''
+            address: 'beijing'
         };
     },
     render() {
@@ -23,25 +25,27 @@ export default React.createClass({
                     iconElementLeft={<IconButton linkButton={true} href="#/"><NavigationArrowBack /></IconButton>}
                     iconElementRight={<FlatButton label="Send" />}
                 />
-                <div>
-                    <TextField
-                        multiLine={true}
-                        fullWidth={true}
-                        hintText="Write what you want to say!"
-                    /><br />
-                    <FlatButton
-                        label="Add your photos"
-                        linkButton={true}
-                        href="#"
-                        icon={<ContentAdd />}
-                    /><br />
-                    <FlatButton
-                        label="Your place"
-                        linkButton={true}
-                        href="#"
-                        icon={<MapsPlace />}
-                    /><br />
-                </div>
+                <form>
+                    <div>
+                        <ContentCreate />
+                        <TextField
+                            name="content"
+                            multiLine={true}
+                            hintText="Write what you want to share!"
+                        />
+                    </div>
+                    <div>
+                        <MapsPlace />
+                        <TextField
+                            name="place"
+                            hintText="Write your address"
+                        />
+                    </div>
+                    <div>
+                        <FileFileUpload />
+                        <input type="file" name="photo"/>
+                    </div>
+                </form>
             </div>
         )
     }
